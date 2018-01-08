@@ -72,6 +72,9 @@ func (b *CloudConfigBuilder) Build(c *fi.ModelBuilderContext) error {
 		if cloudConfig.ElbSecurityGroup != nil {
 			lines = append(lines, "ElbSecurityGroup = "+*cloudConfig.ElbSecurityGroup)
 		}
+		if cloudConfig.AwsStorageEnrypted != nil {
+			lines = append(lines, fmt.Sprintf("AwsStorageEnrypted = %t", *cloudConfig.AwsStorageEnrypted))
+		}
 	case "vsphere":
 		vm_uuid, err := getVMUUID(b.Cluster.Spec.KubernetesVersion)
 		if err != nil {

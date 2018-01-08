@@ -7,6 +7,9 @@ metadata:
 provisioner: kubernetes.io/aws-ebs
 parameters:
   type: gp2
+  {{- if .CloudConfig.AwsStorageEnrypted }}
+  encrypted: ".CloudConfig.AwsStorageEnrypted"
+  {{- end }}  
 
 ---
 
@@ -21,3 +24,6 @@ metadata:
 provisioner: kubernetes.io/aws-ebs
 parameters:
   type: gp2
+  {{- if .CloudConfig.AwsStorageEnrypted }}
+  encrypted: ".CloudConfig.AwsStorageEnrypted"
+  {{- end }}  

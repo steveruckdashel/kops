@@ -404,6 +404,7 @@ type CloudConfiguration struct {
 	// AWS cloud-config options
 	DisableSecurityGroupIngress *bool   `json:"disableSecurityGroupIngress,omitempty"`
 	ElbSecurityGroup            *string `json:"elbSecurityGroup,omitempty"`
+	AwsStorageEnrypted          *bool   `json:"awsStorageEnrypted,omitempty"`
 	// vSphere cloud-config specs
 	VSphereUsername      *string `json:"vSphereUsername,omitempty"`
 	VSpherePassword      *string `json:"vSpherePassword,omitempty"`

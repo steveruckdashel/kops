@@ -373,15 +373,27 @@ spec:
       some file content
 ```
 
-
 ### cloudConfig
+
+#### disableSecurityGroupIngress
 
 If you are using aws as `cloudProvider`, you can disable authorization of ELB security group to Kubernetes Nodes security group. In other words, it will not add security group rule.
 This can be usefull to avoid AWS limit: 50 rules per security group.
+
 ```yaml
 spec:
   cloudConfig:
     disableSecurityGroupIngress: true
+```
+
+#### awsStorageEnrypted
+
+If you are using aws as `cloudProvider`, you can enable encryption of the default storage class.
+
+```yaml
+spec:
+  cloudConfig:
+    awsStorageEnrypted: true
 ```
 
 ### docker
